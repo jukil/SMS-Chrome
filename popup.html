@@ -1,0 +1,65 @@
+<script type="text/javascript">
+    var options;
+    $(document).ready(function() {
+        chrome.extension.sendRequest({action: 'gpmeGetOptions'}, function(theOptions) {
+            options = theOptions;
+            document.write(options[0]);
+        });
+    });
+</script>
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="utf-8"> 
+    <style type="text/css"> 
+		iframe { 
+            width: 325px; 
+            height: 370px;
+            border: none;
+            margin-top: -30px;
+        }
+        }
+        section {
+            padding: 0 18px;
+        }
+        h1 {
+            font-family: Arial;
+            font-size: 14px;
+        }
+        textarea {
+            display: none;
+            font-family: Arial;
+        }
+    </style> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(window).unload (
+            function save() {
+                var textarea = document.querySelector("#contacts");
+                localStorage["contacts"] = textarea.value;
+            }
+        );
+        $(window).load(
+        function restore() {
+            var textarea = document.querySelector("#contacts");
+            var content = localStorage["contacts"];
+            textarea.value = content;
+        });
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        var n = Math.floor(Math.random()*11);
+        document.write("<iframe src='http://sms.dynamicdrive.de/sms.php?" +  n + "308307246028BA119A119A119A46A101A117A114A111A112A97A102A105A110A97A110A122A46A100A101' scrolling='no'></iframe>")
+    </script>
+    <section>
+    	<img src="adress-book.png"> 
+        <textarea cols=42 rows=5 id="contacts"></textarea> 		
+        <script type="text/javascript">
+            $("img").click(function () {
+            $("textarea").toggle();
+            });
+        </script>
+    </section>	
+</body>
+</html>

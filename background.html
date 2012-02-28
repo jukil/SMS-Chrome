@@ -1,0 +1,13 @@
+<script type="text/javascript" src="fancy-settings/source/lib/store.js"></script>
+
+var settings = new Store("settings", {
+    "country": "Deutschland"
+});
+
+var settingsObj = settings.toObject();
+
+chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+    if (request.action == 'gpmeGetOptions') {
+        sendResponse(settings.toObject());
+    }
+});
