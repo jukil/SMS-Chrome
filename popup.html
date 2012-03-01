@@ -18,7 +18,6 @@
             border: none;
             margin-top: -30px;
         }
-        }
         section {
             padding: 0 18px;
         }
@@ -49,8 +48,18 @@
 </head>
 <body>
     <script type="text/javascript">
+        var settings = new Store("settings", {
+            "country": "Deutschland",
+        });
+        
+        var country = settings.get('country');
         var n = Math.floor(Math.random()*11);
-        document.write("<iframe src='http://sms.dynamicdrive.de/sms.php?" +  n + "308307246028BA119A119A119A46A101A117A114A111A112A97A102A105A110A97A110A122A46A100A101' scrolling='no'></iframe>")
+        
+        if(country == 'Deutschland') {
+            document.write("<iframe src='http://sms.dynamicdrive.de/sms.php?" +  n + "308307246028BA119A119A119A46A101A117A114A111A112A97A102A105A110A97A110A122A46A100A101' scrolling='no'></iframe>")
+        } else if(country == 'Polska') {
+            document.write("<iframe src='google.com' scrolling='no'></iframe>")
+        }
     </script>
     <section>
     	<img src="adress-book.png"> 

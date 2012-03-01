@@ -1,5 +1,5 @@
 <script type="text/javascript" src="fancy-settings/source/lib/store.js"></script>
-
+<script type="text/javascript">
 var settings = new Store("settings", {
     "country": "Deutschland"
 });
@@ -11,3 +11,4 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
         sendResponse(settings.toObject());
     }
 });
+</script>
