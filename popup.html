@@ -1,12 +1,5 @@
-<script type="text/javascript">
-    var options;
-    $(document).ready(function() {
-        chrome.extension.sendRequest({action: 'gpmeGetOptions'}, function(theOptions) {
-            options = theOptions;
-            document.write(options[0]);
-        });
-    });
-</script>
+<!-- Load fancy-settings -->
+<script type="text/javascript" src="fancy-settings/source/lib/store.js"></script>
 <!DOCTYPE html> 
 <html> 
 <head> 
@@ -17,6 +10,19 @@
             height: 370px;
             border: none;
             margin-top: -30px;
+        }
+        #polska {
+            width: 266px;
+            height: 209px;
+            overflow: hidden;
+            position: relative;
+        }
+        #polska iframe {
+            position: absolute;
+            top: -340px;
+            left: -518px;
+            width: 1280px;
+            height: 1200px;
         }
         section {
             padding: 0 18px;
@@ -30,6 +36,7 @@
             font-family: Arial;
         }
     </style> 
+    <!-- Javascript needed for the address book -->
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
     <script type="text/javascript">
         $(window).unload (
@@ -47,6 +54,7 @@
     </script>
 </head>
 <body>
+    <!-- Based on the country set the frame URL accordingly -->
     <script type="text/javascript">
         var settings = new Store("settings", {
             "country": "Deutschland",
@@ -58,7 +66,7 @@
         if(country == 'Deutschland') {
             document.write("<iframe src='http://sms.dynamicdrive.de/sms.php?" +  n + "308307246028BA119A119A119A46A101A117A114A111A112A97A102A105A110A97A110A122A46A100A101' scrolling='no'></iframe>")
         } else if(country == 'Polska') {
-            document.write("<iframe src='google.com' scrolling='no'></iframe>")
+            document.write("<div id='polska'><iframe src='http://smsportal.org/sms/' scrolling='no'></iframe></div>")
         }
     </script>
     <section>
