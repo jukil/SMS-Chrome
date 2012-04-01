@@ -1,6 +1,6 @@
 {
     "name": "SMS Chrome",
-    "version": "0.9",
+    "version": "1.0",
     "description": "__MSG_description__",
     "default_locale": "en",
     "options_page": "fancy-settings/source/index.html",
