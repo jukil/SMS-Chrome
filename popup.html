@@ -49,23 +49,36 @@
       position: relative;
       top: 3px;
     }
-    textarea {
+    #addressbook {
         display: none;
         font-family: Arial;
     }
+    #contacts {
+        width: 260px;
+    }
+    #confirm {
+        color: red;
+        font-size: 12px;
+    }
+    textarea {
+        font-size: 12px;
+    }
   </style> 
-  <!-- Javascript needed for the address book toggle function -->
-  <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
-  <script type="text/javascript" src="address_book.js"></script>
 </head>
 <body>
   <!-- Based on the country set the frame URL accordingly -->
   <script type="text/javascript" src="sms.js"></script>
   <section>
     <h1>Adressbuch</h1>
-    <img src="adress-book.png"> 
-    <textarea cols="42" rows="5" id="contacts"></textarea> 		
-    <script type="text/javascript" src="address_book_toggle.js"></script>
+    <img src="adress-book.png">
+    <div id="addressbook">
+        <textarea cols="42" rows="5" id="contacts"></textarea>
+        <input id="save-button" type="submit" value="Speichern" />
+        <span id="confirm"></span>
+    </div>
+    <!-- Javascript needed for the address book toggle function -->
+    <script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="address_book.js"></script>
   </section>	
 </body>
 </html>
