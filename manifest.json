@@ -1,6 +1,6 @@
 {
     "name": "SMS Chrome",
-    "version": "1.3",
+    "version": "1.4",
 	"manifest_version": 2,
     "description": "Versenden Sie kostenlos SMS im deutschen Mobilfunknetz direkt über Ihren Browser.",
     "icons": { "16": "icon16.png",

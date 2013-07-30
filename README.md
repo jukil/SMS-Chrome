@@ -9,6 +9,10 @@ Download in the webstore: https://chrome.google.com/webstore/detail/sms-chrome/n
 Changelog
 =========
 
+1.4 
+ 
+ - Fixed minor issues in sms.js
+ 
 1.3
 
  - Address book now syncs between browsers
